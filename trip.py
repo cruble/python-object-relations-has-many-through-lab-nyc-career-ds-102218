@@ -1,5 +1,3 @@
-from query import Query
-
 class Trip:
 
     _all = []

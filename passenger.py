@@ -2,10 +2,9 @@ from query import Query
 
 class Passenger:
 
-	_all = []
+    _all = []
 
     def __init__(self, name, age):
-    	from query import Query
         self._name = name
         self._age = age
         self.add_passenger(self)
@@ -31,12 +30,12 @@ class Passenger:
     	cls._all.append(passenger)
 
     def trips(self):
-    	pass 
+        return Query(self.name).trips()
 
     def drivers(self):
-        pass
+        return list(map(lambda trip: trip.driver, self.trips()))
 
     def trip_count(self):
-        pass
+        return Query(self.name).trip_count()
 
 
